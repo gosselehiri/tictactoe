@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" pages="2">
+<mxfile host="app.diagrams.net" pages="3">
   <diagram id="hzJezzWDKvpXfmylw4o2" name="Actuel">
     <mxGraphModel dx="1768" dy="1083" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0" adaptiveColors="auto">
       <root>
@@ -55,7 +55,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="sgNywuj7H11fEaePP-5I" name="Cible">
+  <diagram id="sgNywuj7H11fEaePP-5I" name="Cible-Jalon2">
     <mxGraphModel dx="1414" dy="866" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -128,6 +128,41 @@
         </mxCell>
         <mxCell id="6Vf-8iln6NGXKWcO4_FW-47" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(18, 18, 18); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;HTTPS (Port 443)&lt;/span&gt;" vertex="1">
           <mxGeometry height="20" width="100" x="364" y="900" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="SVcOx0XegT6DbIb9rAIY" name="Cible-Jalon1">
+    <mxGraphModel dx="1414" dy="866" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-1" parent="1" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#6c8ebf;html=1;fontStyle=1;align=center;" value="Environnement de Dev" vertex="1">
+          <mxGeometry height="260" width="180" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-2" parent="XSCZjWOY-BTCIdTyTrKj-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Monolithe Dev&lt;/b&gt;&lt;br&gt;(Nouveau serveur de dev sur lequel le Dev peut créer des env de manière automatisée)" vertex="1">
+          <mxGeometry height="80" width="140" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-3" parent="XSCZjWOY-BTCIdTyTrKj-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Développeur&lt;/b&gt;&lt;br&gt;Poste de travail" vertex="1">
+          <mxGeometry height="60" width="140" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-4" parent="1" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#b85450;html=1;fontStyle=1;align=center;" value="Environnement de Prod" vertex="1">
+          <mxGeometry height="260" width="180" x="460" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-5" parent="XSCZjWOY-BTCIdTyTrKj-4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;Monolithe Prod&lt;/b&gt;&lt;br&gt;(Identique à lÉtat actuel)" vertex="1">
+          <mxGeometry height="60" width="140" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;Pipeline CI/CD" vertex="1">
+          <mxGeometry height="80" width="140" x="260" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-7" edge="1" parent="1" source="XSCZjWOY-BTCIdTyTrKj-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;endArrow=classic;" target="XSCZjWOY-BTCIdTyTrKj-2" value="Code &amp;amp; Test">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-8" edge="1" parent="1" source="XSCZjWOY-BTCIdTyTrKj-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673a6;endArrow=classic;" target="XSCZjWOY-BTCIdTyTrKj-6" value="git push">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XSCZjWOY-BTCIdTyTrKj-9" edge="1" parent="1" source="XSCZjWOY-BTCIdTyTrKj-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;endArrow=classic;" target="XSCZjWOY-BTCIdTyTrKj-5" value="Déploiement">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
