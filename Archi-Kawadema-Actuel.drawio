@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="hzJezzWDKvpXfmylw4o2" name="Actuel">
+    <mxGraphModel dx="1784" dy="1083" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" parent="1" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;html=1;" value="&lt;b&gt;Utilisateur / Internet&lt;/b&gt;&lt;br&gt;Requêtes HTTP/HTTPS" vertex="1">
+          <mxGeometry height="80" width="120" x="20" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="aws" parent="1" style="swimlane;startSize=30;fillColor=#F2F3F3;strokeColor=#232F3E;html=1;" value="&lt;b&gt;AWS Cloud&lt;/b&gt;" vertex="1">
+          <mxGeometry height="460" width="760" x="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" parent="aws" style="swimlane;startSize=30;fillColor=#E6F2F8;strokeColor=#0073BB;html=1;" value="&lt;b&gt;VPC (Subnet Public)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="390" width="720" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2" parent="vpc" style="swimlane;startSize=30;fillColor=#FFF2E6;strokeColor=#FF9900;html=1;" value="&lt;b&gt;Instance EC2 (Ubuntu/Linux)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="320" width="680" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="apache" parent="ec2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8E0E0;strokeColor=#D00000;" value="&lt;b&gt;Serveur Web Apache&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;Virtual Hosts&lt;br&gt;Port 80 / 443&lt;/font&gt;" vertex="1">
+          <mxGeometry height="240" width="140" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="laravel1" parent="ec2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#C65911;" value="&lt;b&gt;App 1 - Kawadema&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;/var/www/app1&lt;br&gt;PHP-FPM&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="laravel2" parent="ec2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#C65911;" value="&lt;b&gt;Laravel App 2&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;/var/www/app2&lt;br&gt;PHP-FPM&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="240" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="phpmyadmin" parent="ec2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2EFDA;strokeColor=#375623;" value="&lt;b&gt;phpMyAdmin&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;Interface Web&lt;br&gt;/phpmyadmin&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="240" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="mysql" parent="ec2" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#418AB3;" value="&lt;b&gt;Base de Données&lt;/b&gt;&lt;br&gt;MySQL Server&lt;br&gt;&lt;font size=&quot;1&quot;&gt;Port 3306&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="140" x="490" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="apache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="apache" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="laravel1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="apache" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="laravel2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="apache" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="phpmyadmin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="laravel1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="laravel2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="phpmyadmin" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" target="mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
